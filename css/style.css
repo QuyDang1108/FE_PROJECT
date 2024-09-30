@@ -1,7 +1,10 @@
 :root {
     --pink: pink;
     --black: black;
+    --white: white;
+    --gray: #333; /* Màu xám cho tiêu đề */
 }
+
 body {
     background-color: var(--pink); 
     margin: 0;
@@ -25,22 +28,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 4px 50px rgb(251, 251, 251);
+    transform: rotate(-10deg) translate(-500px, -130px);
 }
 
 .BL {
+    position: relative;
+    left: -80px;
+    top: -20px;
     color: var(--pink); 
     font-size: 40px;
-    border: 10px solid var(--pink); 
+    border: 5px solid var(--pink); 
     padding: 10px 20px;
     border-radius: 20px; 
     background-color: var(--black); 
+    transform: rotate(10deg);
 }
 
 .content {
     display: grid;
     grid-template-areas: 
-    "describe member1"
-    "describe member2";
+    "1 describe"
+    "2 describe";
     gap: 20px;
     align-items: stretch;
     margin: 10px auto;
@@ -49,28 +58,32 @@ body {
 
 .describe {
     grid-area: describe;
+    position: relative;
+    top: -80px;
     font-size: 18px;
     line-height: 1.6;
-    color: var(--black);
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--black); /* Sử dụng biến màu */
+    color: var(--pink);
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 100px rgb(251, 251, 251);
     width: 40vw;
+    height: 70vh;
 }
 
 .member {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px 0 20px 40px;
+    padding: 20px 40px; 
     width: 40vw;
 }
 
 .info h2 {
-    color: #333;
+    color: var(--gray);
     font-size: 24px;
     margin: 5px 0;
 }
@@ -86,10 +99,13 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .modal:target {
     display: flex;
+    opacity: 1;
 }
 
 .modal-content {
@@ -111,25 +127,30 @@ body {
     color: #000;
 }
 
+.close-btn:hover {
+    color: red;
+    cursor: pointer;
+}
+
 .avt {
     display: block; 
-    width: 120px; 
-    height: 120px; 
+    width: 500px; 
+    height: 500px; 
     background-image: url("/img/461637596_1070731317227709_3955877404478351878_n.png");
     background-size: cover;
     background-position: center;
     border-radius: 50%;
     margin-right: 20px;
-    border: 3px solid #fff;
+    box-shadow: 0px 4px 50px rgb(0, 0, 0);
+    border: 3px solid pink;
 }
-
 
 @media (max-width: 768px) {
     .content {
         grid-template-areas:
-        "describe"
         "m1"
-        "m2";
+        "describe"
+        ;
         margin-left: 10px;
     }
     .circle {
