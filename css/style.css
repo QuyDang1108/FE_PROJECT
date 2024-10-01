@@ -10,6 +10,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
+    height: auto;
 }
 
 .team-heading {
@@ -21,39 +22,40 @@ body {
 
 .circle {
     background-color: var(--black);
-    width: 99vw;
-    height: 30vh;
+    width: 1700px;
+    height: 250px;
     border-bottom-left-radius: 50% 100%;
     border-bottom-right-radius: 50% 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     box-shadow: 0px 4px 50px rgb(251, 251, 251);
     transform: rotate(-10deg) translate(-500px, -130px);
+    position: fixed;
+    top: -30px;
+    z-index: -100;
 }
 
 .BL {
-    position: relative;
-    left: -80px;
-    top: -20px;
     color: var(--pink);
     font-size: 40px;
     border: 5px solid var(--pink);
     padding: 10px 20px;
     border-radius: 20px;
     background-color: var(--black);
-    transform: rotate(10deg);
+    position: fixed;
+    z-index: -1;
+    margin: 0;
+    top: 40px;
+    left: 40px;
 }
 
 .content {
     display: grid;
     grid-template-areas:
-        "1 describe"
-        "2 describe";
+        "1 describe";
     gap: 20px;
     align-items: stretch;
-    margin: 10px auto;
+    margin: 30vh auto 0;
     max-width: 90vw;
+    height: auto;
 }
 
 .describe {
@@ -150,19 +152,27 @@ body {
         grid-template-areas:
             "m1"
             "describe";
+        gap: 10px;
         margin-left: 10px;
     }
     .circle {
-        height: 20vh;
+        width: 600px;
+        height: 250px;
+        transform: rotate(-10deg) translate(-130px, -50px);
+        position: fixed;
+        top: -30px;
+        z-index: -100;
     }
     .BL {
         font-size: 30px;
+        width: auto;
     }
     .describe {
-        width: 100%;
+        width: 90%;
+        margin: 20px auto;
     }
-    .member {
-        width: 100%;
+    .avt {
+        margin: 0 auto 100px;
     }
 }
 .member-info {
@@ -214,7 +224,6 @@ body {
 }
 
 .member-image img {
-    width: 250px;
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
