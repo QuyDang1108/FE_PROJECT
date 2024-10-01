@@ -138,7 +138,6 @@ body {
 .avt {
     display: block;
     width: min(30rem, 90%);
-    background-image: url("/img/461637596_1070731317227709_3955877404478351878_n.png");
     background-size: cover;
     background-position: center;
     border-radius: 50%;
